@@ -1,0 +1,43 @@
+html {
+	background: #333;
+	margin: 0;
+	padding: 20px;
+	padding-bottom: 50px;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+}
+
+main {
+    text-align: center;
+	color: white;
+	min-height: 100vh;
+	max-width: 720px;
+	margin: 0 auto;
+	top: 20%;
+	font-weight: bold;
+    display: flex;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+	padding: 50px 0px 50px 0px;
+}
+
+input {
+	margin-top: 16px;
+	padding: 8px;
+	border: 1.5px solid #FF5300;
+	border-radius: 5px;
+	position: relative;
+    width: 100%;
+	text-align: center;
+	right: 8px;
+}
+
+result {
+	padding-top: 50px;
+}
