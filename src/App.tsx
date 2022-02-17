@@ -39,7 +39,7 @@ export default function App() {
 
 			<div className="card">
 				<header className="content-header">
-					<img src={imageSrc} />
+					<img src={imageSrc} alt="ledger-icon" />
 					<p className="header-description">{headerText}</p>
 					<p className="header-example">
 						For example, the path <code>{defaultPath}</code> becomes <code>{defaultResult}</code>.
