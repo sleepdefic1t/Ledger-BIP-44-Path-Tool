@@ -4,4 +4,4 @@ This tool parses a standard BIP-44 path into a packed uint32 hex-string prepende
 
 * [https://replit.com/@sleepdefic1t/Ledger-BIP-44-Path-Tool](https://replit.com/@sleepdefic1t/Ledger-BIP-44-Path-Tool?v=1)
 
-![](./screenshot.jpeg)
+![](./screenshot.png)
