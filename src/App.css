@@ -13,11 +13,11 @@ html {
 
 main {
 	width: 100%;
-    text-align: center;
+	text-align: center;
 	color: white;
 	margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .content-header{
@@ -26,7 +26,7 @@ main {
 }
 
 .content-header > img {
-	width: 50%;
+	width: 250px;
 }
 
 .content-header > .header-description {
