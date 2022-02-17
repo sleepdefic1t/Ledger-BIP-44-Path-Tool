@@ -13,46 +13,64 @@ export default function App() {
 
 	const [path, setPath] = useState("");
 	const [parsed, setParsed] = useState("");
+	const [placeholder, setPlaceholder] = useState("");
 
 	function handleParse() {
 		try {
 			setParsed(Bip44.Path.fromString(path).toBytes().toString("hex"));
-		} catch (e) {
-			alert(e);
+		} catch (err) {
+			alert(err);
+			setParsed("");
 		}
 		setPath("");
 	}
 
-	function setDefault() {
+	function handleSetDefault(e) {
+        setParsed("");
 		setPath(defaultPath);
+	}
+
+	function handleSubmit(e) {
+		e.preventDefault();
+		e.target.reset();
 	}
 
 	return (
 		<main>
-			<header className="content-header">
-				<img src={headerImageUrl} />
-				<p className="header-description">{headerText}</p>
-			    <p className="header-example">
-				    For example, the path <code>{defaultPath}</code> becomes <code>{defaultResult}</code>.
-			    </p>
-			</header>
+
+			<div className="card">
+				<header className="content-header">
+				    <img src={headerImageUrl} />
+				    <p className="header-description">{headerText}</p>
+			        <p className="header-example">
+				        For example, the path <code>{defaultPath}</code> becomes <code>{defaultResult}</code>.
+			        </p>
+			    </header>
+		    </div>
+
 			<div className="content-body">
-				<input className={path}
-					   type="text"
-					   placeholder={pathPlaceholder}
-					   defaultValue={path}
-					autoFocus
-					   onChange={e => setPath(e.target.value)} />
-			    <button className="default-button"
-					    onClick={setDefault}>Use Default</button>
-				<button className="parse-button"
-					    onClick={handleParse}>Parse Path</button>
+				<form className="path-form"
+					  onSubmit={handleSubmit.bind(this)}>
+				    <input type="text"
+						   className={path}
+						   defaultValue={path}
+					       placeholder={pathPlaceholder}
+					       onChange={e => setPath(e.target.value)}/>
+			        <button className="default-button"
+					        onClick={e => handleSetDefault(e)}>Default</button>
+					<button className="parse-button"
+					        onClick={handleParse}>Parse</button>
+			    </form>
 			</div>
-			<footer className="content-result">
-				<textarea className={parsed}
-					   defaultValue={parsed}
-					   placeholder={"result"} />
-			</footer>
+
+			<div className="card">
+			    <footer className="content-result">
+				    <textarea className={parsed}
+					          defaultValue={parsed}
+					          placeholder={"result"} />
+			    </footer>
+		    </div>
+
 		</main>
 	)
 }

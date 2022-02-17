@@ -1,3 +1,8 @@
+
+* {
+    box-sizing: border-box;
+}
+
 html {
 	background: #333;
 	margin: 0;
@@ -5,24 +10,47 @@ html {
 	list-style: none;
 	text-decoration: none;
 	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: bold;
 	overflow-x: hidden;
-	display: float;
 }
 
 main {
 	width: 100%;
-	text-align: center;
+    text-align: center;
 	color: white;
 	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
+	overflow: hidden;
+	align-items: center;
+}
+
+.card {
+    flex-basis: 225px;
+	max-width: 720px;
+	width: 100%;
+    border-radius: 5px;
+	
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+	z-index: -1;
+}
+
+.card > header {
+	width: 100%;
+	word-break: normal;
+	box-shadow: 0px 3px 7.5px rgba(0, 0, 0, 0.5);
+}
+
+.card > footer {
+	width: 100%;
+	box-shadow: 0px -3px 7.5px rgba(0, 0, 0, 0.5);
 }
 
 .content-header{
 	padding: 10px 25px;
-	box-shadow: 0px 3px 7.5px rgba(0, 0, 0, 0.5);
 }
 
 .content-header > img {
@@ -30,11 +58,13 @@ main {
 }
 
 .content-header > .header-description {
+	word-break: normal;
 	text-align: left;
 }
 
 .content-header > .header-example {
 	padding: 5px;
+	word-break: break-all;
 	box-shadow: 0px 3px 7.5px rgba(0, 0, 0, 0.2);
 }
 
@@ -43,12 +73,25 @@ main {
 }
 
 .content-body {
-	padding: 25px 0px;
+	margin-top: -40px;
 }
 
-.content-body > input {
-	position: relative;
-	min-width: 50%;
+.path-form {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    word-break: no;
+	white-space: nowrap;
+    overflow: wrap;
+    text-overflow: ellipsis;
+	min-width: 100%;
+	max-width: 720px;
+	align-items: center;
+	justify-content: center;
+}
+
+.path-form > input {
+	min-width: 70%;
 	border: 1.5px solid #b51a00;
 	border-radius: 25px 0px 0px 25px;
 	padding: 10px;
@@ -56,13 +99,23 @@ main {
 	margin-right: 0px;
 }
 
-.content-body > button {
-	color: black;
-	text-align: center;
+.path-form > input:focus {
+  outline: none;
 }
 
-.content-body > .default-button {
-	max-width: 25%;
+.path-form > .default-button {
+	min-width: 30%;	
+	padding: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	border: 1.5px solid #b51a00;
+	background: rgba(0, 0, 0, 0);
+	text-align: center;
+	color: white;
+}
+
+.path-form > .parse-button {
+	min-width: 30%;
 	border-radius: 0px 25px 25px 0px;
 	padding: 10px;
 	margin-left: 0px;
@@ -76,17 +129,13 @@ main {
 	min-width: 50%;
 }
 
-.content-result {
+.card, .content-result {
 	width: 100%;
 	position: relative;
-	bottom: 0;
-	padding: 25px 0px;
-	padding-bottom: 50%;
-	box-shadow: 0px -3px 7.5px rgba(0, 0, 0, 0.5);
+	padding: 10px 25px 50px 10px;
 }
 
-.content-result > textarea {
-	width: 75%;
-	height: 13px;
+.card, .content-result > textarea {
+	width: 100%;
 	text-align: center;
 }
