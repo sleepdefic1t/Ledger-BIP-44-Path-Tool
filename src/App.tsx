@@ -4,7 +4,7 @@ import './App.css'
 import * as Bip44 from "./utils/bip44";
 
 export default function App() {
-	const headerImageUrl = "https://raw.githubusercontent.com/LedgerHQ/ledger-live-desktop/develop/build/icon.png"
+	const headerImageUrl = "../icon.png"
 	const headerText = "This tool parses a standard BIP-44 path into a packed uint32 hex-string prepended by its element length. This is useful when creating APDU instructions for Ledger HW wallet communication where a derivation path is required.";
 
 	const defaultPath = "44'/1'/0'/0/0"
