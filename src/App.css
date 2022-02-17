@@ -1,43 +1,92 @@
 html {
 	background: #333;
 	margin: 0;
-	padding: 20px;
-	padding-bottom: 50px;
 	box-sizing: border-box;
 	list-style: none;
 	text-decoration: none;
 	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	overflow-x: hidden;
+	display: float;
 }
 
 main {
+	width: 100%;
     text-align: center;
 	color: white;
-	min-height: 100vh;
-	max-width: 720px;
 	margin: 0 auto;
-	top: 20%;
-	font-weight: bold;
-    display: flex;
-    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-header {
-	padding: 50px 0px 50px 0px;
+.content-header{
+	padding: 10px 25px;
+	box-shadow: 0px 3px 7.5px rgba(0, 0, 0, 0.5);
 }
 
-input {
-	margin-top: 16px;
-	padding: 8px;
-	border: 1.5px solid #FF5300;
-	border-radius: 5px;
+.content-header > img {
+	width: 50%;
+}
+
+.content-header > .header-description {
+	text-align: left;
+}
+
+.content-header > .header-example {
+	padding: 5px;
+	box-shadow: 0px 3px 7.5px rgba(0, 0, 0, 0.2);
+}
+
+.content-header > p > code {
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.content-body {
+	padding: 25px 0px;
+}
+
+.content-body > input {
 	position: relative;
-    width: 100%;
+	min-width: 50%;
+	border: 1.5px solid #b51a00;
+	border-radius: 25px 0px 0px 25px;
+	padding: 10px;
 	text-align: center;
-	right: 8px;
+	margin-right: 0px;
 }
 
-result {
-	padding-top: 50px;
+.content-body > button {
+	color: black;
+	text-align: center;
+}
+
+.content-body > .default-button {
+	max-width: 25%;
+	border-radius: 0px 25px 25px 0px;
+	padding: 10px;
+	margin-left: 0px;
+	border: 1.5px solid #b51a00;
+	background: rgba(0, 0, 0, 0);
+	text-align: center;
+	color: white;
+}
+
+.content-body > .parse-button {
+	min-width: 50%;
+}
+
+.content-result {
+	width: 100%;
+	position: relative;
+	bottom: 0;
+	padding: 25px 0px;
+	padding-bottom: 50%;
+	box-shadow: 0px -3px 7.5px rgba(0, 0, 0, 0.5);
+}
+
+.content-result > textarea {
+	width: 75%;
+	height: 13px;
+	text-align: center;
 }
